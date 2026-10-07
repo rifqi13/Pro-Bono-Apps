@@ -1,0 +1,1194 @@
+ERROR - 2026-09-28 12:04:42 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'peradi_probono' in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'peradi_probono', 3306, '', 0)
+#1 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\probono-4\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\probono-4\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\probono-4\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\probono-4\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 C:\xampp\htdocs\probono-4\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 C:\xampp\htdocs\probono-4\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 C:\xampp\htdocs\probono-4\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 C:\xampp\htdocs\probono-4\system\Boot.php(444): CodeIgniter\CLI\Console->run()
+#13 C:\xampp\htdocs\probono-4\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 C:\xampp\htdocs\probono-4\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'peradi_probono' in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\probono-4\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\xampp\htdocs\probono-4\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\probono-4\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\probono-4\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 C:\xampp\htdocs\probono-4\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 C:\xampp\htdocs\probono-4\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\xampp\htdocs\probono-4\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\xampp\htdocs\probono-4\system\Boot.php(444): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\probono-4\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\probono-4\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-09-28 12:05:54 --> Table 'pbh_cabang' already exists
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 5 APPPATH\Database\Migrations\2026-01-01-000001_CreatePbhCabang.php(24): CodeIgniter\Database\Forge->createTable('pbh_cabang')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreatePbhCabang->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:07:17 --> Duplicate key name 'kode'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 5 APPPATH\Database\Migrations\2026-01-01-000001_CreatePbhCabang.php(24): CodeIgniter\Database\Forge->createTable('pbh_cabang')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreatePbhCabang->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:07:47 --> Table 'probono_a.pbh_cabang' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:07:47\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:07:47\'), (\'Jakarta\',\'2026-09-28 12:07:47\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Bandung\',\'2026-09-28 12:07:47\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Surabaya\',\'2026-09-28 12:07:47\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Medan\',\'2026-09-28 12:07:47\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Makassar\',\'2026-09-28 12:07:47\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:07:47\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:07:47\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:07:47\'), (\'Jakarta\',\'2026-09-28 12:07:47\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Bandung\',\'2026-09-28 12:07:47\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Surabaya\',\'2026-09-28 12:07:47\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Medan\',\'2026-09-28 12:07:47\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Makassar\',\'2026-09-28 12:07:47\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:07:47\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:07:47\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:07:47\'), (\'Jakarta\',\'2026-09-28 12:07:47\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Bandung\',\'2026-09-28 12:07:47\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Surabaya\',\'2026-09-28 12:07:47\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Medan\',\'2026-09-28 12:07:47\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Makassar\',\'2026-09-28 12:07:47\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:07:47\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1851): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:07:47\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:07:47\'), (\'Jakarta\',\'2026-09-28 12:07:47\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Bandung\',\'2026-09-28 12:07:47\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Surabaya\',\'2026-09-28 12:07:47\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Medan\',\'2026-09-28 12:07:47\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:07:47\'), (\'Makassar\',\'2026-09-28 12:07:47\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:07:47\')', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2240): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Database\Seeds\PbhCabangSeeder.php(19): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PbhCabangSeeder->run()
+ 8 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PbhCabangSeeder')
+ 9 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:08:00 --> Table 'probono_a.pbh_cabang' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT *
+FROM `pbh_cabang`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pbh_cabang`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pbh_cabang`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pbh_cabang`', [], false)
+ 5 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(10): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 7 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 8 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 9 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+10 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:08:06 --> Table 'probono_a.pbh_cabang' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT *
+FROM `pbh_cabang`
+WHERE `kode` = \'DPN\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pbh_cabang`
+WHERE `kode` = \'DPN\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pbh_cabang`
+WHERE `kode` = \'DPN\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pbh_cabang`
+WHERE `kode` = :kode:', [...], false)
+ 5 APPPATH\Database\Seeds\UserSeeder.php(10): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\UserSeeder->run()
+ 7 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\UserSeeder')
+ 8 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 9 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+10 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:08:22 --> Table 'probono_a.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT *
+FROM `users`
+WHERE `role` = \'advokat\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `role` = \'advokat\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `role` = \'advokat\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `role` = :role:', [...], false)
+ 5 APPPATH\Database\Seeds\PengajuanSeeder.php(10): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 7 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 8 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 9 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+10 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:10:36 --> Table 'pbh_cabang' already exists
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 5 APPPATH\Database\Migrations\2026-01-01-000001_CreatePbhCabang.php(24): CodeIgniter\Database\Forge->createTable('pbh_cabang')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreatePbhCabang->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:11:00 --> Unknown column 'tipe' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:11:00\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:11:00\'), (\'Jakarta\',\'2026-09-28 12:11:00\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Bandung\',\'2026-09-28 12:11:00\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Surabaya\',\'2026-09-28 12:11:00\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Medan\',\'2026-09-28 12:11:00\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Makassar\',\'2026-09-28 12:11:00\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:11:00\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:11:00\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:11:00\'), (\'Jakarta\',\'2026-09-28 12:11:00\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Bandung\',\'2026-09-28 12:11:00\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Surabaya\',\'2026-09-28 12:11:00\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Medan\',\'2026-09-28 12:11:00\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Makassar\',\'2026-09-28 12:11:00\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:11:00\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:11:00\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:11:00\'), (\'Jakarta\',\'2026-09-28 12:11:00\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Bandung\',\'2026-09-28 12:11:00\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Surabaya\',\'2026-09-28 12:11:00\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Medan\',\'2026-09-28 12:11:00\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Makassar\',\'2026-09-28 12:11:00\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:11:00\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1851): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:11:00\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:11:00\'), (\'Jakarta\',\'2026-09-28 12:11:00\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Bandung\',\'2026-09-28 12:11:00\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Surabaya\',\'2026-09-28 12:11:00\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Medan\',\'2026-09-28 12:11:00\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:11:00\'), (\'Makassar\',\'2026-09-28 12:11:00\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:11:00\')', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2240): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Database\Seeds\PbhCabangSeeder.php(19): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PbhCabangSeeder->run()
+ 8 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PbhCabangSeeder')
+ 9 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:11:49 --> Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:11:49\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:11:49\'), (\'Jakarta\',\'2026-09-28 12:11:49\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Bandung\',\'2026-09-28 12:11:49\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Surabaya\',\'2026-09-28 12:11:49\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Medan\',\'2026-09-28 12:11:49\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Makassar\',\'2026-09-28 12:11:49\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:11:49\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:11:49\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:11:49\'), (\'Jakarta\',\'2026-09-28 12:11:49\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Bandung\',\'2026-09-28 12:11:49\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Surabaya\',\'2026-09-28 12:11:49\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Medan\',\'2026-09-28 12:11:49\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Makassar\',\'2026-09-28 12:11:49\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:11:49\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:11:49\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:11:49\'), (\'Jakarta\',\'2026-09-28 12:11:49\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Bandung\',\'2026-09-28 12:11:49\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Surabaya\',\'2026-09-28 12:11:49\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Medan\',\'2026-09-28 12:11:49\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Makassar\',\'2026-09-28 12:11:49\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:11:49\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1851): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pbh_cabang` (`alamat`, `created_at`, `email`, `is_active`, `kode`, `nama`, `telepon`, `tipe`, `updated_at`)
+VALUES (\'Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120\',\'2026-09-28 12:11:49\',\'dpn@peradi.or.id\',1,\'DPN\',\'DPN PERADI (Pusat)\',\'021-1234567\',\'DPN\',\'2026-09-28 12:11:49\'), (\'Jakarta\',\'2026-09-28 12:11:49\',\'jakarta@peradi.or.id\',1,\'JKT\',\'PBH DPC Jakarta\',\'021-1111111\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Bandung\',\'2026-09-28 12:11:49\',\'bandung@peradi.or.id\',1,\'BDG\',\'PBH DPC Bandung\',\'022-2222222\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Surabaya\',\'2026-09-28 12:11:49\',\'surabaya@peradi.or.id\',1,\'SBY\',\'PBH DPC Surabaya\',\'031-3333333\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Medan\',\'2026-09-28 12:11:49\',\'medan@peradi.or.id\',1,\'MDN\',\'PBH DPC Medan\',\'061-4444444\',\'DPC\',\'2026-09-28 12:11:49\'), (\'Makassar\',\'2026-09-28 12:11:49\',\'makassar@peradi.or.id\',1,\'MKS\',\'PBH DPC Makassar\',\'0411-5555555\',\'DPC\',\'2026-09-28 12:11:49\')', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2240): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Database\Seeds\PbhCabangSeeder.php(19): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PbhCabangSeeder->run()
+ 8 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PbhCabangSeeder')
+ 9 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "name" is deprecated, use "name()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'name', 'name')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(19): Faker\Generator->__get('name')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:14:53 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "safeEmail" is deprecated, use "safeEmail()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\UniqueGenerator.php(57): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'safeEmail', 'safeEmail')
+ 3 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(21): Faker\UniqueGenerator->__get('safeEmail')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:14:53 --> Table 'probono_a.master_advokat' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `master_advokat` (`created_at`, `email`, `gelar`, `is_registered`, `nama_lengkap`, `nia`, `no_wa`, `pbh_cabang_id`, `status_advokat`, `updated_at`)
+VALUES (\'2026-09-28 12:14:53\',\'luis.maulana@example.net\',\'S.H.\',0,\'Oni Tira Yulianti\',\'98.00001\',\'088708009686\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'knuraini@example.com\',\'S.H.\',0,\'Bahuraksa Wahyudin S.Farm\',\'98.00002\',\'088342790295\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'elisa.pratiwi@example.com\',\'S.H.\',0,\'Ellis Nasyidah\',\'98.00003\',\'084848872402\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'nasab20@example.org\',\'S.H.\',0,\'Harjaya Wibowo\',\'98.00004\',\'087010468251\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'asmuni01@example.org\',\'S.H.\',0,\'Faizah Farah Wulandari M.Pd\',\'98.00005\',\'084214185769\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'banawi.suartini@example.org\',\'S.H.\',0,\'Sari Mulyani\',\'98.00006\',\'089156325234\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'lutama@example.net\',\'S.H.\',0,\'Putri Susanti\',\'98.00007\',\'081952361193\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ekurniawan@example.net\',\'S.H.\',0,\'Dagel Mustika Pranowo S.Kom\',\'98.00008\',\'080218486925\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'umandasari@example.org\',\'S.H.\',0,\'Rachel Nasyiah\',\'98.00009\',\'082023786560\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'uchita.siregar@example.com\',\'S.H.\',0,\'Luwes Banara Permadi\',\'98.00010\',\'089209013950\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'adriansyah.kenari@example.org\',\'S.H.\',0,\'Salwa Hariyah\',\'98.00011\',\'086683556700\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ftampubolon@example.org\',\'S.H.\',0,\'Koko Pradana\',\'98.00012\',\'086066789031\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'otamba@example.com\',\'S.H.\',0,\'Janet Usyi Andriani M.Ak\',\'98.00013\',\'084889593566\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'byulianti@example.org\',\'S.H.\',0,\'Darmaji Napitupulu\',\'98.00014\',\'080328624071\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ina.latupono@example.net\',\'S.H.\',0,\'Keisha Susanti\',\'98.00015\',\'088969698157\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'jumari.prayoga@example.org\',\'S.H.\',0,\'Makara Saragih\',\'98.00016\',\'089309966692\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'shakila33@example.net\',\'S.H.\',0,\'Cahyanto Makuta Nashiruddin\',\'98.00017\',\'088002771071\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'najam.padmasari@example.org\',\'S.H.\',0,\'Pangeran Sihombing\',\'98.00018\',\'088672124663\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'enuraini@example.net\',\'S.H.\',0,\'Nasim Yahya Habibi S.Ked\',\'98.00019\',\'082899918717\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'haryanti.ganep@example.org\',\'S.H.\',0,\'Lili Kusmawati S.Farm\',\'98.00020\',\'084223112503\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'bsitompul@example.org\',\'S.H.\',0,\'Ratna Hassanah\',\'98.00021\',\'083436868829\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'fathonah.widiastuti@example.org\',\'S.H.\',0,\'Empluk Sitompul\',\'98.00022\',\'085651824439\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'maida.hasanah@example.com\',\'S.H.\',0,\'Ganep Asmadi Budiyanto M.Farm\',\'98.00023\',\'087195255601\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'raisa.winarsih@example.net\',\'S.H.\',0,\'Latika Prastuti\',\'98.00024\',\'085116880609\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'lestari.tugiman@example.com\',\'S.H.\',0,\'Margana Saputra M.M.\',\'98.00025\',\'084982151682\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ulya.tarihoran@example.net\',\'S.H.\',0,\'Paramita Alika Usamah S.Ked\',\'98.00026\',\'080775666176\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'caket32@example.org\',\'S.H.\',0,\'Pia Belinda Lestari M.M.\',\'98.00027\',\'085243926412\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'rprasetya@example.com\',\'S.H.\',0,\'Padma Yolanda\',\'98.00028\',\'081654511233\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'panji.pertiwi@example.com\',\'S.H.\',0,\'Paris Kuswandari\',\'98.00029\',\'082645061919\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'hidayat.farhunnisa@example.net\',\'S.H.\',0,\'Azalea Hartati\',\'98.00030\',\'084451844540\',\'5\',\'aktif\',\'2026-09-28 12:14:53\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `master_advokat` (`created_at`, `email`, `gelar`, `is_registered`, `nama_lengkap`, `nia`, `no_wa`, `pbh_cabang_id`, `status_advokat`, `updated_at`)
+VALUES (\'2026-09-28 12:14:53\',\'luis.maulana@example.net\',\'S.H.\',0,\'Oni Tira Yulianti\',\'98.00001\',\'088708009686\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'knuraini@example.com\',\'S.H.\',0,\'Bahuraksa Wahyudin S.Farm\',\'98.00002\',\'088342790295\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'elisa.pratiwi@example.com\',\'S.H.\',0,\'Ellis Nasyidah\',\'98.00003\',\'084848872402\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'nasab20@example.org\',\'S.H.\',0,\'Harjaya Wibowo\',\'98.00004\',\'087010468251\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'asmuni01@example.org\',\'S.H.\',0,\'Faizah Farah Wulandari M.Pd\',\'98.00005\',\'084214185769\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'banawi.suartini@example.org\',\'S.H.\',0,\'Sari Mulyani\',\'98.00006\',\'089156325234\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'lutama@example.net\',\'S.H.\',0,\'Putri Susanti\',\'98.00007\',\'081952361193\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ekurniawan@example.net\',\'S.H.\',0,\'Dagel Mustika Pranowo S.Kom\',\'98.00008\',\'080218486925\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'umandasari@example.org\',\'S.H.\',0,\'Rachel Nasyiah\',\'98.00009\',\'082023786560\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'uchita.siregar@example.com\',\'S.H.\',0,\'Luwes Banara Permadi\',\'98.00010\',\'089209013950\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'adriansyah.kenari@example.org\',\'S.H.\',0,\'Salwa Hariyah\',\'98.00011\',\'086683556700\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ftampubolon@example.org\',\'S.H.\',0,\'Koko Pradana\',\'98.00012\',\'086066789031\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'otamba@example.com\',\'S.H.\',0,\'Janet Usyi Andriani M.Ak\',\'98.00013\',\'084889593566\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'byulianti@example.org\',\'S.H.\',0,\'Darmaji Napitupulu\',\'98.00014\',\'080328624071\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ina.latupono@example.net\',\'S.H.\',0,\'Keisha Susanti\',\'98.00015\',\'088969698157\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'jumari.prayoga@example.org\',\'S.H.\',0,\'Makara Saragih\',\'98.00016\',\'089309966692\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'shakila33@example.net\',\'S.H.\',0,\'Cahyanto Makuta Nashiruddin\',\'98.00017\',\'088002771071\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'najam.padmasari@example.org\',\'S.H.\',0,\'Pangeran Sihombing\',\'98.00018\',\'088672124663\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'enuraini@example.net\',\'S.H.\',0,\'Nasim Yahya Habibi S.Ked\',\'98.00019\',\'082899918717\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'haryanti.ganep@example.org\',\'S.H.\',0,\'Lili Kusmawati S.Farm\',\'98.00020\',\'084223112503\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'bsitompul@example.org\',\'S.H.\',0,\'Ratna Hassanah\',\'98.00021\',\'083436868829\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'fathonah.widiastuti@example.org\',\'S.H.\',0,\'Empluk Sitompul\',\'98.00022\',\'085651824439\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'maida.hasanah@example.com\',\'S.H.\',0,\'Ganep Asmadi Budiyanto M.Farm\',\'98.00023\',\'087195255601\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'raisa.winarsih@example.net\',\'S.H.\',0,\'Latika Prastuti\',\'98.00024\',\'085116880609\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'lestari.tugiman@example.com\',\'S.H.\',0,\'Margana Saputra M.M.\',\'98.00025\',\'084982151682\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ulya.tarihoran@example.net\',\'S.H.\',0,\'Paramita Alika Usamah S.Ked\',\'98.00026\',\'080775666176\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'caket32@example.org\',\'S.H.\',0,\'Pia Belinda Lestari M.M.\',\'98.00027\',\'085243926412\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'rprasetya@example.com\',\'S.H.\',0,\'Padma Yolanda\',\'98.00028\',\'081654511233\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'panji.pertiwi@example.com\',\'S.H.\',0,\'Paris Kuswandari\',\'98.00029\',\'082645061919\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'hidayat.farhunnisa@example.net\',\'S.H.\',0,\'Azalea Hartati\',\'98.00030\',\'084451844540\',\'5\',\'aktif\',\'2026-09-28 12:14:53\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `master_advokat` (`created_at`, `email`, `gelar`, `is_registered`, `nama_lengkap`, `nia`, `no_wa`, `pbh_cabang_id`, `status_advokat`, `updated_at`)
+VALUES (\'2026-09-28 12:14:53\',\'luis.maulana@example.net\',\'S.H.\',0,\'Oni Tira Yulianti\',\'98.00001\',\'088708009686\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'knuraini@example.com\',\'S.H.\',0,\'Bahuraksa Wahyudin S.Farm\',\'98.00002\',\'088342790295\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'elisa.pratiwi@example.com\',\'S.H.\',0,\'Ellis Nasyidah\',\'98.00003\',\'084848872402\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'nasab20@example.org\',\'S.H.\',0,\'Harjaya Wibowo\',\'98.00004\',\'087010468251\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'asmuni01@example.org\',\'S.H.\',0,\'Faizah Farah Wulandari M.Pd\',\'98.00005\',\'084214185769\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'banawi.suartini@example.org\',\'S.H.\',0,\'Sari Mulyani\',\'98.00006\',\'089156325234\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'lutama@example.net\',\'S.H.\',0,\'Putri Susanti\',\'98.00007\',\'081952361193\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ekurniawan@example.net\',\'S.H.\',0,\'Dagel Mustika Pranowo S.Kom\',\'98.00008\',\'080218486925\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'umandasari@example.org\',\'S.H.\',0,\'Rachel Nasyiah\',\'98.00009\',\'082023786560\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'uchita.siregar@example.com\',\'S.H.\',0,\'Luwes Banara Permadi\',\'98.00010\',\'089209013950\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'adriansyah.kenari@example.org\',\'S.H.\',0,\'Salwa Hariyah\',\'98.00011\',\'086683556700\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ftampubolon@example.org\',\'S.H.\',0,\'Koko Pradana\',\'98.00012\',\'086066789031\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'otamba@example.com\',\'S.H.\',0,\'Janet Usyi Andriani M.Ak\',\'98.00013\',\'084889593566\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'byulianti@example.org\',\'S.H.\',0,\'Darmaji Napitupulu\',\'98.00014\',\'080328624071\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ina.latupono@example.net\',\'S.H.\',0,\'Keisha Susanti\',\'98.00015\',\'088969698157\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'jumari.prayoga@example.org\',\'S.H.\',0,\'Makara Saragih\',\'98.00016\',\'089309966692\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'shakila33@example.net\',\'S.H.\',0,\'Cahyanto Makuta Nashiruddin\',\'98.00017\',\'088002771071\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'najam.padmasari@example.org\',\'S.H.\',0,\'Pangeran Sihombing\',\'98.00018\',\'088672124663\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'enuraini@example.net\',\'S.H.\',0,\'Nasim Yahya Habibi S.Ked\',\'98.00019\',\'082899918717\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'haryanti.ganep@example.org\',\'S.H.\',0,\'Lili Kusmawati S.Farm\',\'98.00020\',\'084223112503\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'bsitompul@example.org\',\'S.H.\',0,\'Ratna Hassanah\',\'98.00021\',\'083436868829\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'fathonah.widiastuti@example.org\',\'S.H.\',0,\'Empluk Sitompul\',\'98.00022\',\'085651824439\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'maida.hasanah@example.com\',\'S.H.\',0,\'Ganep Asmadi Budiyanto M.Farm\',\'98.00023\',\'087195255601\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'raisa.winarsih@example.net\',\'S.H.\',0,\'Latika Prastuti\',\'98.00024\',\'085116880609\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'lestari.tugiman@example.com\',\'S.H.\',0,\'Margana Saputra M.M.\',\'98.00025\',\'084982151682\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ulya.tarihoran@example.net\',\'S.H.\',0,\'Paramita Alika Usamah S.Ked\',\'98.00026\',\'080775666176\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'caket32@example.org\',\'S.H.\',0,\'Pia Belinda Lestari M.M.\',\'98.00027\',\'085243926412\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'rprasetya@example.com\',\'S.H.\',0,\'Padma Yolanda\',\'98.00028\',\'081654511233\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'panji.pertiwi@example.com\',\'S.H.\',0,\'Paris Kuswandari\',\'98.00029\',\'082645061919\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'hidayat.farhunnisa@example.net\',\'S.H.\',0,\'Azalea Hartati\',\'98.00030\',\'084451844540\',\'5\',\'aktif\',\'2026-09-28 12:14:53\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1851): CodeIgniter\Database\BaseConnection->query('INSERT INTO `master_advokat` (`created_at`, `email`, `gelar`, `is_registered`, `nama_lengkap`, `nia`, `no_wa`, `pbh_cabang_id`, `status_advokat`, `updated_at`)
+VALUES (\'2026-09-28 12:14:53\',\'luis.maulana@example.net\',\'S.H.\',0,\'Oni Tira Yulianti\',\'98.00001\',\'088708009686\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'knuraini@example.com\',\'S.H.\',0,\'Bahuraksa Wahyudin S.Farm\',\'98.00002\',\'088342790295\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'elisa.pratiwi@example.com\',\'S.H.\',0,\'Ellis Nasyidah\',\'98.00003\',\'084848872402\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'nasab20@example.org\',\'S.H.\',0,\'Harjaya Wibowo\',\'98.00004\',\'087010468251\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'asmuni01@example.org\',\'S.H.\',0,\'Faizah Farah Wulandari M.Pd\',\'98.00005\',\'084214185769\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'banawi.suartini@example.org\',\'S.H.\',0,\'Sari Mulyani\',\'98.00006\',\'089156325234\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'lutama@example.net\',\'S.H.\',0,\'Putri Susanti\',\'98.00007\',\'081952361193\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ekurniawan@example.net\',\'S.H.\',0,\'Dagel Mustika Pranowo S.Kom\',\'98.00008\',\'080218486925\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'umandasari@example.org\',\'S.H.\',0,\'Rachel Nasyiah\',\'98.00009\',\'082023786560\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'uchita.siregar@example.com\',\'S.H.\',0,\'Luwes Banara Permadi\',\'98.00010\',\'089209013950\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'adriansyah.kenari@example.org\',\'S.H.\',0,\'Salwa Hariyah\',\'98.00011\',\'086683556700\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ftampubolon@example.org\',\'S.H.\',0,\'Koko Pradana\',\'98.00012\',\'086066789031\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'otamba@example.com\',\'S.H.\',0,\'Janet Usyi Andriani M.Ak\',\'98.00013\',\'084889593566\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'byulianti@example.org\',\'S.H.\',0,\'Darmaji Napitupulu\',\'98.00014\',\'080328624071\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ina.latupono@example.net\',\'S.H.\',0,\'Keisha Susanti\',\'98.00015\',\'088969698157\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'jumari.prayoga@example.org\',\'S.H.\',0,\'Makara Saragih\',\'98.00016\',\'089309966692\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'shakila33@example.net\',\'S.H.\',0,\'Cahyanto Makuta Nashiruddin\',\'98.00017\',\'088002771071\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'najam.padmasari@example.org\',\'S.H.\',0,\'Pangeran Sihombing\',\'98.00018\',\'088672124663\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'enuraini@example.net\',\'S.H.\',0,\'Nasim Yahya Habibi S.Ked\',\'98.00019\',\'082899918717\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'haryanti.ganep@example.org\',\'S.H.\',0,\'Lili Kusmawati S.Farm\',\'98.00020\',\'084223112503\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'bsitompul@example.org\',\'S.H.\',0,\'Ratna Hassanah\',\'98.00021\',\'083436868829\',\'6\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'fathonah.widiastuti@example.org\',\'S.H.\',0,\'Empluk Sitompul\',\'98.00022\',\'085651824439\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'maida.hasanah@example.com\',\'S.H.\',0,\'Ganep Asmadi Budiyanto M.Farm\',\'98.00023\',\'087195255601\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'raisa.winarsih@example.net\',\'S.H.\',0,\'Latika Prastuti\',\'98.00024\',\'085116880609\',\'1\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'lestari.tugiman@example.com\',\'S.H.\',0,\'Margana Saputra M.M.\',\'98.00025\',\'084982151682\',\'4\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'ulya.tarihoran@example.net\',\'S.H.\',0,\'Paramita Alika Usamah S.Ked\',\'98.00026\',\'080775666176\',\'5\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'caket32@example.org\',\'S.H.\',0,\'Pia Belinda Lestari M.M.\',\'98.00027\',\'085243926412\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'rprasetya@example.com\',\'S.H.\',0,\'Padma Yolanda\',\'98.00028\',\'081654511233\',\'3\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'panji.pertiwi@example.com\',\'S.H.\',0,\'Paris Kuswandari\',\'98.00029\',\'082645061919\',\'2\',\'aktif\',\'2026-09-28 12:14:53\'), (\'2026-09-28 12:14:53\',\'hidayat.farhunnisa@example.net\',\'S.H.\',0,\'Azalea Hartati\',\'98.00030\',\'084451844540\',\'5\',\'aktif\',\'2026-09-28 12:14:53\')', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2240): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH\Database\Seeds\MasterAdvokatSeeder.php(30): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\MasterAdvokatSeeder->run()
+ 8 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\MasterAdvokatSeeder')
+ 9 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:15:36 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'dateTimeThisYear', 'dateTimeThisYear')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(37): Faker\Generator->__get('dateTimeThisYear')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:15:36 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'dateTimeThisYear', 'dateTimeThisYear')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(38): Faker\Generator->__get('dateTimeThisYear')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:15:36 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'dateTimeThisYear', 'dateTimeThisYear')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(39): Faker\Generator->__get('dateTimeThisYear')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:15:36 --> Unknown column 'submitted_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `pengajuan` (`no_registrasi`, `user_id`, `pbh_cabang_id`, `jenis_layanan`, `jenis_non_litigasi`, `tahun`, `status`, `catatan_verifikator`, `verified_at`, `submitted_at`, `created_at`, `updated_at`) VALUES (\'#PB-2026-JKT-0001\', \'4\', \'2\', \'non-litigasi\', \'seminar\', \'2026\', \'approved\', NULL, \'2026-07-25 12:58:44\', \'2026-08-30 21:32:28\', \'2026-02-16 10:08:21\', \'2026-09-28 12:15:36\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pengajuan` (`no_registrasi`, `user_id`, `pbh_cabang_id`, `jenis_layanan`, `jenis_non_litigasi`, `tahun`, `status`, `catatan_verifikator`, `verified_at`, `submitted_at`, `created_at`, `updated_at`) VALUES (\'#PB-2026-JKT-0001\', \'4\', \'2\', \'non-litigasi\', \'seminar\', \'2026\', \'approved\', NULL, \'2026-07-25 12:58:44\', \'2026-08-30 21:32:28\', \'2026-02-16 10:08:21\', \'2026-09-28 12:15:36\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pengajuan` (`no_registrasi`, `user_id`, `pbh_cabang_id`, `jenis_layanan`, `jenis_non_litigasi`, `tahun`, `status`, `catatan_verifikator`, `verified_at`, `submitted_at`, `created_at`, `updated_at`) VALUES (\'#PB-2026-JKT-0001\', \'4\', \'2\', \'non-litigasi\', \'seminar\', \'2026\', \'approved\', NULL, \'2026-07-25 12:58:44\', \'2026-08-30 21:32:28\', \'2026-02-16 10:08:21\', \'2026-09-28 12:15:36\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pengajuan` (`no_registrasi`, `user_id`, `pbh_cabang_id`, `jenis_layanan`, `jenis_non_litigasi`, `tahun`, `status`, `catatan_verifikator`, `verified_at`, `submitted_at`, `created_at`, `updated_at`) VALUES (:no_registrasi:, :user_id:, :pbh_cabang_id:, :jenis_layanan:, :jenis_non_litigasi:, :tahun:, :status:, :catatan_verifikator:, :verified_at:, :submitted_at:, :created_at:, :updated_at:)', [...], false)
+ 5 APPPATH\Database\Seeds\PengajuanSeeder.php(28): CodeIgniter\Database\BaseBuilder->insert([...], true)
+ 6 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 7 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 8 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 9 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+10 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:16:08 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'dateTimeThisYear', 'dateTimeThisYear')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(38): Faker\Generator->__get('dateTimeThisYear')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:16:08 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'dateTimeThisYear', 'dateTimeThisYear')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(39): Faker\Generator->__get('dateTimeThisYear')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:16:08 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "jobTitle" is deprecated, use "jobTitle()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "jobTitle" is deprecated, use "jobTitle()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'jobTitle', 'jobTitle')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(54): Faker\Generator->__get('jobTitle')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:16:08 --> Unknown column 'created_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `detail_litigasi` (`pengajuan_id`, `jenis_perkara`, `no_perkara`, `pengadilan`, `created_at`) VALUES (1, \'pidana_umum\', \'No. 241/Pdt.G/2026/PN.Jkt.Pst\', \'PN Jakarta Pusat\', \'2026-09-28 12:16:08\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `detail_litigasi` (`pengajuan_id`, `jenis_perkara`, `no_perkara`, `pengadilan`, `created_at`) VALUES (1, \'pidana_umum\', \'No. 241/Pdt.G/2026/PN.Jkt.Pst\', \'PN Jakarta Pusat\', \'2026-09-28 12:16:08\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `detail_litigasi` (`pengajuan_id`, `jenis_perkara`, `no_perkara`, `pengadilan`, `created_at`) VALUES (1, \'pidana_umum\', \'No. 241/Pdt.G/2026/PN.Jkt.Pst\', \'PN Jakarta Pusat\', \'2026-09-28 12:16:08\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `detail_litigasi` (`pengajuan_id`, `jenis_perkara`, `no_perkara`, `pengadilan`, `created_at`) VALUES (:pengajuan_id:, :jenis_perkara:, :no_perkara:, :pengadilan:, :created_at:)', [...], false)
+ 5 APPPATH\Database\Seeds\PengajuanSeeder.php(62): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 7 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 8 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 9 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+10 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:16:45 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'dateTimeThisYear', 'dateTimeThisYear')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(37): Faker\Generator->__get('dateTimeThisYear')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:16:45 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'dateTimeThisYear', 'dateTimeThisYear')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(38): Faker\Generator->__get('dateTimeThisYear')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+WARNING - 2026-09-28 12:16:45 --> [DEPRECATED] Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead. in VENDORPATH\symfony\deprecation-contracts\function.php on line 25.
+ 1 VENDORPATH\symfony\deprecation-contracts\function.php(25): trigger_error('Since fakerphp/faker 1.14: Accessing property "dateTimeThisYear" is deprecated, use "dateTimeThisYear()" instead.', 16384)
+ 2 VENDORPATH\fakerphp\faker\src\Faker\Generator.php(962): trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', 'dateTimeThisYear', 'dateTimeThisYear')
+ 3 APPPATH\Database\Seeds\PengajuanSeeder.php(39): Faker\Generator->__get('dateTimeThisYear')
+ 4 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 5 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 6 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 8 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-28 12:16:45 --> Duplicate entry '#PB-2026-JKT-0001' for key 'no_registrasi'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `pengajuan` (`no_registrasi`, `user_id`, `pbh_cabang_id`, `jenis_layanan`, `jenis_non_litigasi`, `tahun`, `status`, `catatan_verifikator`, `verified_at`, `submitted_at`, `created_at`, `updated_at`) VALUES (\'#PB-2026-JKT-0001\', \'4\', \'2\', \'litigasi\', NULL, \'2026\', \'approved\', NULL, \'2026-01-28 04:05:22\', \'2026-06-05 17:14:51\', \'2026-03-18 15:59:30\', \'2026-09-28 12:16:45\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pengajuan` (`no_registrasi`, `user_id`, `pbh_cabang_id`, `jenis_layanan`, `jenis_non_litigasi`, `tahun`, `status`, `catatan_verifikator`, `verified_at`, `submitted_at`, `created_at`, `updated_at`) VALUES (\'#PB-2026-JKT-0001\', \'4\', \'2\', \'litigasi\', NULL, \'2026\', \'approved\', NULL, \'2026-01-28 04:05:22\', \'2026-06-05 17:14:51\', \'2026-03-18 15:59:30\', \'2026-09-28 12:16:45\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pengajuan` (`no_registrasi`, `user_id`, `pbh_cabang_id`, `jenis_layanan`, `jenis_non_litigasi`, `tahun`, `status`, `catatan_verifikator`, `verified_at`, `submitted_at`, `created_at`, `updated_at`) VALUES (\'#PB-2026-JKT-0001\', \'4\', \'2\', \'litigasi\', NULL, \'2026\', \'approved\', NULL, \'2026-01-28 04:05:22\', \'2026-06-05 17:14:51\', \'2026-03-18 15:59:30\', \'2026-09-28 12:16:45\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pengajuan` (`no_registrasi`, `user_id`, `pbh_cabang_id`, `jenis_layanan`, `jenis_non_litigasi`, `tahun`, `status`, `catatan_verifikator`, `verified_at`, `submitted_at`, `created_at`, `updated_at`) VALUES (:no_registrasi:, :user_id:, :pbh_cabang_id:, :jenis_layanan:, :jenis_non_litigasi:, :tahun:, :status:, :catatan_verifikator:, :verified_at:, :submitted_at:, :created_at:, :updated_at:)', [...], false)
+ 5 APPPATH\Database\Seeds\PengajuanSeeder.php(28): CodeIgniter\Database\BaseBuilder->insert([...], true)
+ 6 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\PengajuanSeeder->run()
+ 7 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PengajuanSeeder')
+ 8 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 9 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+10 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))

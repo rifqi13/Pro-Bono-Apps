@@ -1,0 +1,901 @@
+ERROR - 2026-09-29 02:46:51 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'probono_a', 3306, '', 0)
+#1 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\probono-4\system\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+#3 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+#4 C:\xampp\htdocs\probono-4\system\Session\Session.php(624): session_start()
+#5 C:\xampp\htdocs\probono-4\system\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+#6 C:\xampp\htdocs\probono-4\system\Config\Services.php(714): CodeIgniter\Session\Session->start()
+#7 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+#8 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#9 C:\xampp\htdocs\probono-4\system\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#10 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+#11 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#12 C:\xampp\htdocs\probono-4\system\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+#13 C:\xampp\htdocs\probono-4\app\Controllers\BaseController.php(18): service('session')
+#14 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#15 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+#16 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 C:\xampp\htdocs\probono-4\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#18 C:\xampp\htdocs\probono-4\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#19 C:\xampp\htdocs\probono-4\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#20 C:\xampp\htdocs\probono-4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#21 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\probono-4\system\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+#2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+#3 C:\xampp\htdocs\probono-4\system\Session\Session.php(624): session_start()
+#4 C:\xampp\htdocs\probono-4\system\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+#5 C:\xampp\htdocs\probono-4\system\Config\Services.php(714): CodeIgniter\Session\Session->start()
+#6 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+#7 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#8 C:\xampp\htdocs\probono-4\system\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#9 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+#10 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#11 C:\xampp\htdocs\probono-4\system\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+#12 C:\xampp\htdocs\probono-4\app\Controllers\BaseController.php(18): service('session')
+#13 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#14 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+#15 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 C:\xampp\htdocs\probono-4\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#17 C:\xampp\htdocs\probono-4\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#18 C:\xampp\htdocs\probono-4\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#19 C:\xampp\htdocs\probono-4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#20 {main}
+CRITICAL - 2026-09-29 02:46:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+ 2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+ 3 SYSTEMPATH\Session\Session.php(624): session_start()
+ 4 SYSTEMPATH\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+ 5 SYSTEMPATH\Config\Services.php(714): CodeIgniter\Session\Session->start()
+ 6 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 7 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 8 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 9 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+10 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', [])
+11 SYSTEMPATH\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+12 APPPATH\Controllers\BaseController.php(18): service('session')
+13 SYSTEMPATH\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+14 SYSTEMPATH\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+15 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+18 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+19 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+ERROR - 2026-09-29 02:46:56 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'probono_a', 3306, '', 0)
+#1 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\probono-4\system\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+#3 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+#4 C:\xampp\htdocs\probono-4\system\Session\Session.php(624): session_start()
+#5 C:\xampp\htdocs\probono-4\system\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+#6 C:\xampp\htdocs\probono-4\system\Config\Services.php(714): CodeIgniter\Session\Session->start()
+#7 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+#8 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#9 C:\xampp\htdocs\probono-4\system\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#10 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+#11 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#12 C:\xampp\htdocs\probono-4\system\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+#13 C:\xampp\htdocs\probono-4\app\Controllers\BaseController.php(18): service('session')
+#14 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#15 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+#16 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 C:\xampp\htdocs\probono-4\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#18 C:\xampp\htdocs\probono-4\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#19 C:\xampp\htdocs\probono-4\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#20 C:\xampp\htdocs\probono-4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#21 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\probono-4\system\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+#2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+#3 C:\xampp\htdocs\probono-4\system\Session\Session.php(624): session_start()
+#4 C:\xampp\htdocs\probono-4\system\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+#5 C:\xampp\htdocs\probono-4\system\Config\Services.php(714): CodeIgniter\Session\Session->start()
+#6 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+#7 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#8 C:\xampp\htdocs\probono-4\system\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#9 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+#10 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#11 C:\xampp\htdocs\probono-4\system\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+#12 C:\xampp\htdocs\probono-4\app\Controllers\BaseController.php(18): service('session')
+#13 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#14 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+#15 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 C:\xampp\htdocs\probono-4\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#17 C:\xampp\htdocs\probono-4\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#18 C:\xampp\htdocs\probono-4\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#19 C:\xampp\htdocs\probono-4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#20 {main}
+CRITICAL - 2026-09-29 02:46:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+ 2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+ 3 SYSTEMPATH\Session\Session.php(624): session_start()
+ 4 SYSTEMPATH\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+ 5 SYSTEMPATH\Config\Services.php(714): CodeIgniter\Session\Session->start()
+ 6 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 7 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 8 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 9 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+10 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', [])
+11 SYSTEMPATH\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+12 APPPATH\Controllers\BaseController.php(18): service('session')
+13 SYSTEMPATH\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+14 SYSTEMPATH\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+15 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+18 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+19 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+ERROR - 2026-09-29 02:47:11 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'probono_a', 3306, '', 0)
+#1 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\probono-4\system\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+#3 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+#4 C:\xampp\htdocs\probono-4\system\Session\Session.php(624): session_start()
+#5 C:\xampp\htdocs\probono-4\system\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+#6 C:\xampp\htdocs\probono-4\system\Config\Services.php(714): CodeIgniter\Session\Session->start()
+#7 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+#8 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#9 C:\xampp\htdocs\probono-4\system\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#10 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+#11 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#12 C:\xampp\htdocs\probono-4\system\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+#13 C:\xampp\htdocs\probono-4\app\Controllers\BaseController.php(18): service('session')
+#14 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#15 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+#16 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 C:\xampp\htdocs\probono-4\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#18 C:\xampp\htdocs\probono-4\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#19 C:\xampp\htdocs\probono-4\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#20 C:\xampp\htdocs\probono-4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#21 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\probono-4\system\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+#2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+#3 C:\xampp\htdocs\probono-4\system\Session\Session.php(624): session_start()
+#4 C:\xampp\htdocs\probono-4\system\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+#5 C:\xampp\htdocs\probono-4\system\Config\Services.php(714): CodeIgniter\Session\Session->start()
+#6 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+#7 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#8 C:\xampp\htdocs\probono-4\system\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#9 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+#10 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#11 C:\xampp\htdocs\probono-4\system\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+#12 C:\xampp\htdocs\probono-4\app\Controllers\BaseController.php(18): service('session')
+#13 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#14 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+#15 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 C:\xampp\htdocs\probono-4\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#17 C:\xampp\htdocs\probono-4\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#18 C:\xampp\htdocs\probono-4\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#19 C:\xampp\htdocs\probono-4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#20 {main}
+CRITICAL - 2026-09-29 02:47:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+ 2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+ 3 SYSTEMPATH\Session\Session.php(624): session_start()
+ 4 SYSTEMPATH\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+ 5 SYSTEMPATH\Config\Services.php(714): CodeIgniter\Session\Session->start()
+ 6 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 7 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 8 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 9 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+10 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', [])
+11 SYSTEMPATH\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+12 APPPATH\Controllers\BaseController.php(18): service('session')
+13 SYSTEMPATH\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+14 SYSTEMPATH\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+15 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+18 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+19 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+ERROR - 2026-09-29 02:47:38 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'probono_a', 3306, '', 0)
+#1 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\probono-4\system\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+#3 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+#4 C:\xampp\htdocs\probono-4\system\Session\Session.php(624): session_start()
+#5 C:\xampp\htdocs\probono-4\system\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+#6 C:\xampp\htdocs\probono-4\system\Config\Services.php(714): CodeIgniter\Session\Session->start()
+#7 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+#8 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#9 C:\xampp\htdocs\probono-4\system\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#10 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+#11 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#12 C:\xampp\htdocs\probono-4\system\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+#13 C:\xampp\htdocs\probono-4\app\Controllers\BaseController.php(18): service('session')
+#14 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#15 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+#16 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 C:\xampp\htdocs\probono-4\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#18 C:\xampp\htdocs\probono-4\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#19 C:\xampp\htdocs\probono-4\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#20 C:\xampp\htdocs\probono-4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#21 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\probono-4\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\probono-4\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\probono-4\system\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+#2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+#3 C:\xampp\htdocs\probono-4\system\Session\Session.php(624): session_start()
+#4 C:\xampp\htdocs\probono-4\system\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+#5 C:\xampp\htdocs\probono-4\system\Config\Services.php(714): CodeIgniter\Session\Session->start()
+#6 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+#7 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#8 C:\xampp\htdocs\probono-4\system\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#9 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+#10 C:\xampp\htdocs\probono-4\system\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#11 C:\xampp\htdocs\probono-4\system\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+#12 C:\xampp\htdocs\probono-4\app\Controllers\BaseController.php(18): service('session')
+#13 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#14 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+#15 C:\xampp\htdocs\probono-4\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 C:\xampp\htdocs\probono-4\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#17 C:\xampp\htdocs\probono-4\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#18 C:\xampp\htdocs\probono-4\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#19 C:\xampp\htdocs\probono-4\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#20 {main}
+CRITICAL - 2026-09-29 02:47:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(99): CodeIgniter\Database\BaseConnection->initialize()
+ 2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('ci_sessions', 'peradi_session')
+ 3 SYSTEMPATH\Session\Session.php(624): session_start()
+ 4 SYSTEMPATH\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+ 5 SYSTEMPATH\Config\Services.php(714): CodeIgniter\Session\Session->start()
+ 6 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 7 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 8 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 9 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+10 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', [])
+11 SYSTEMPATH\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+12 APPPATH\Controllers\BaseController.php(18): service('session')
+13 SYSTEMPATH\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+14 SYSTEMPATH\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+15 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+18 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+19 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+ERROR - 2026-09-29 02:50:01 --> Table 'probono_a.ci_sessions' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\'
+AND `ip_address` = \'::1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\'
+AND `ip_address` = \'::1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\'
+AND `ip_address` = \'::1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = :id:
+AND `ip_address` = :ip_address:', [...], false)
+ 5 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(130): CodeIgniter\Database\BaseBuilder->get()
+ 6 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read('5d955e8eaa68c0c6cee71ca46c32eb21')
+ 7 SYSTEMPATH\Session\Session.php(624): session_start()
+ 8 SYSTEMPATH\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+ 9 SYSTEMPATH\Config\Services.php(714): CodeIgniter\Session\Session->start()
+10 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+11 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+12 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+13 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+14 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', [])
+15 SYSTEMPATH\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+16 APPPATH\Controllers\BaseController.php(18): service('session')
+17 SYSTEMPATH\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+18 SYSTEMPATH\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+19 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+20 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+22 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+23 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+CRITICAL - 2026-09-29 02:50:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'probono_a.ci_sessions' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = :id:
+AND `ip_address` = :ip_address:', [...], false)
+ 2 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(130): CodeIgniter\Database\BaseBuilder->get()
+ 3 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read('5d955e8eaa68c0c6cee71ca46c32eb21')
+ 4 SYSTEMPATH\Session\Session.php(624): session_start()
+ 5 SYSTEMPATH\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+ 6 SYSTEMPATH\Config\Services.php(714): CodeIgniter\Session\Session->start()
+ 7 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 8 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 9 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+10 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+11 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', [])
+12 SYSTEMPATH\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+13 APPPATH\Controllers\BaseController.php(18): service('session')
+14 SYSTEMPATH\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+15 SYSTEMPATH\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+16 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+20 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+CRITICAL - 2026-09-29 02:50:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'probono_a.ci_sessions' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\'
+AND `ip_address` = \'::1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\'
+AND `ip_address` = \'::1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = :id:
+AND `ip_address` = :ip_address:', [...], false)
+ 4 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(130): CodeIgniter\Database\BaseBuilder->get()
+ 5 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read('5d955e8eaa68c0c6cee71ca46c32eb21')
+ 6 SYSTEMPATH\Session\Session.php(624): session_start()
+ 7 SYSTEMPATH\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+ 8 SYSTEMPATH\Config\Services.php(714): CodeIgniter\Session\Session->start()
+ 9 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+10 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+11 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+12 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+13 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', [])
+14 SYSTEMPATH\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+15 APPPATH\Controllers\BaseController.php(18): service('session')
+16 SYSTEMPATH\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+17 SYSTEMPATH\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+18 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+19 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+20 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+21 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+22 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+CRITICAL - 2026-09-29 02:50:01 --> [Caused by] mysqli_sql_exception: Table 'probono_a.ci_sessions' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\'
+AND `ip_address` = \'::1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\'
+AND `ip_address` = \'::1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\'
+AND `ip_address` = \'::1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = :id:
+AND `ip_address` = :ip_address:', [...], false)
+ 5 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(130): CodeIgniter\Database\BaseBuilder->get()
+ 6 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read('5d955e8eaa68c0c6cee71ca46c32eb21')
+ 7 SYSTEMPATH\Session\Session.php(624): session_start()
+ 8 SYSTEMPATH\Session\Session.php(119): CodeIgniter\Session\Session->startSession()
+ 9 SYSTEMPATH\Config\Services.php(714): CodeIgniter\Session\Session->start()
+10 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+11 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+12 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+13 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::session()
+14 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('session', [])
+15 SYSTEMPATH\Common.php(1096): CodeIgniter\Config\BaseService::get('session')
+16 APPPATH\Controllers\BaseController.php(18): service('session')
+17 SYSTEMPATH\CodeIgniter.php(945): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+18 SYSTEMPATH\CodeIgniter.php(511): CodeIgniter\CodeIgniter->createController()
+19 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+20 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+22 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+23 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+ERROR - 2026-09-29 02:53:33 --> Table 'pbh_cabang' already exists
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 5 APPPATH\Database\Migrations\2026-01-01-000001_CreatePbhCabang.php(24): CodeIgniter\Database\Forge->createTable('pbh_cabang')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreatePbhCabang->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-29 02:54:30 --> Table 'pbh_cabang' already exists
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 5 APPPATH\Database\Migrations\2026-01-01-000001_CreatePbhCabang2.php(24): CodeIgniter\Database\Forge->createTable('pbh_cabang')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreatePbhCabang->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-29 02:55:17 --> Table 'pbh_cabang' already exists
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `pbh_cabang` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 5 APPPATH\Database\Migrations\2026-01-01-000001_CreatePbhCabang2.php(24): CodeIgniter\Database\Forge->createTable('pbh_cabang')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreatePbhCabang2->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-09-29 02:55:58 --> Duplicate key name 'kode'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `pbh_cabang_2` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang_2` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `pbh_cabang_2` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang_2` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `pbh_cabang_2` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang_2` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `pbh_cabang_2` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode` VARCHAR(20) NOT NULL UNIQUE,
+	`nama` VARCHAR(150) NOT NULL,
+	`tipe` ENUM(\'DPN\',\'DPC\') NOT NULL DEFAULT \'DPC\',
+	`alamat` TEXT NULL,
+	`telepon` VARCHAR(20) NULL,
+	`email` VARCHAR(150) NULL,
+	`is_active` TINYINT(1) NOT NULL DEFAULT 1,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_pbh_cabang_2` PRIMARY KEY(`id`),
+	KEY `kode` (`kode`),
+	KEY `tipe` (`tipe`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci')
+ 5 APPPATH\Database\Migrations\2026-01-01-000001_CreatePbhCabang2.php(24): CodeIgniter\Database\Forge->createTable('pbh_cabang_2')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreatePbhCabang2->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-09-29 03:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+ERROR - 2026-09-29 03:01:41 --> Out of range value for column 'timestamp' at row 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `ci_sessions` (`timestamp`, `id`, `ip_address`, `data`) VALUES (now(), \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\', \'::1\', \'__ci_last_regenerate|i:1790650899;_ci_previous_url|s:22:\\"http://localhost:8080/\\";\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ci_sessions` (`timestamp`, `id`, `ip_address`, `data`) VALUES (now(), \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\', \'::1\', \'__ci_last_regenerate|i:1790650899;_ci_previous_url|s:22:\\"http://localhost:8080/\\";\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ci_sessions` (`timestamp`, `id`, `ip_address`, `data`) VALUES (now(), \'peradi_session:5d955e8eaa68c0c6cee71ca46c32eb21\', \'::1\', \'__ci_last_regenerate|i:1790650899;_ci_previous_url|s:22:\\"http://localhost:8080/\\";\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ci_sessions` (`timestamp`, `id`, `ip_address`, `data`) VALUES (now(), :id:, :ip_address:, :data:)', [...], false)
+ 5 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(196): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->write('5d955e8eaa68c0c6cee71ca46c32eb21', '__ci_last_regenerate|i:1790650899;_ci_previous_url|s:22:"http://localhost:8080/";')
+ 7 [internal function]: session_write_close()
+DEBUG - 2026-09-29 03:03:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:07:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:08:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:12:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 03:20:53 --> CSRF token verified.
+DEBUG - 2026-09-29 03:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+ERROR - 2026-09-29 03:20:57 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2026-09-29 03:20:57 --> 220 smtp.mailtrap.io ESMTP ready
+
+hello: 250-smtp.mailtrap.io
+250-SIZE 26214400
+250-PIPELINING
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-SMTPUTF8
+250-DSN
+250-AUTH PLAIN LOGIN CRAM-MD5
+250 STARTTLS
+
+starttls: 220 2.0.0 Start TLS
+
+hello: 250-smtp.mailtrap.io
+250-SIZE 26214400
+250-PIPELINING
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-SMTPUTF8
+250-DSN
+250 AUTH PLAIN LOGIN CRAM-MD5
+
+Failed to authenticate password. Error: 535 5.7.0 Invalid credentials
+
+ERROR - 2026-09-29 03:20:57 --> [Mailer] Gagal kirim ke test@example.com: 220 smtp.mailtrap.io ESMTP ready
+<br><pre>hello: 250-smtp.mailtrap.io
+250-SIZE 26214400
+250-PIPELINING
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-SMTPUTF8
+250-DSN
+250-AUTH PLAIN LOGIN CRAM-MD5
+250 STARTTLS
+</pre><pre>starttls: 220 2.0.0 Start TLS
+</pre><pre>hello: 250-smtp.mailtrap.io
+250-SIZE 26214400
+250-PIPELINING
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-SMTPUTF8
+250-DSN
+250 AUTH PLAIN LOGIN CRAM-MD5
+</pre>Failed to authenticate password. Error: 535 5.7.0 Invalid credentials
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Tue, 29 Sep 2026 03:20:53 +0000
+To: test@example.com
+Subject: =?UTF-8?Q?Verifikasi=20Email=20-=20PERADI=20Pro=20Bono?=
+From: &quot;PERADI Pro Bono&quot; &lt;noreply@peradi.or.id&gt;
+Return-Path: &lt;noreply@peradi.or.id&gt;
+Reply-To: &lt;noreply@peradi.or.id&gt;
+User-Agent: CodeIgniter
+X-Sender: noreply@peradi.or.id
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;6abb2e95d68f70.83897109@peradi.or.id&gt;
+Mime-Version: 1.0
+
+</pre>
+DEBUG - 2026-09-29 03:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 03:22:02 --> CSRF token verified.
+DEBUG - 2026-09-29 03:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 03:22:41 --> CSRF token verified.
+DEBUG - 2026-09-29 03:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 03:22:54 --> CSRF token verified.
+DEBUG - 2026-09-29 03:23:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 03:25:15 --> CSRF token verified.
+DEBUG - 2026-09-29 03:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:36:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 03:37:01 --> CSRF token verified.
+DEBUG - 2026-09-29 03:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 03:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 05:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 05:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 05:09:27 --> CSRF token verified.
+DEBUG - 2026-09-29 05:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+CRITICAL - 2026-09-29 05:09:27 --> ErrorException: Cannot redeclare App\Models\ActivityLogModel::chartTopUsers()
+[Method: POST, Route: auth/login]
+in APPPATH\Models\ActivityLogModel.php on line 91.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-09-29 05:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 05:14:55 --> CSRF token verified.
+DEBUG - 2026-09-29 05:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 05:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 08:03:20 --> CSRF token verified.
+DEBUG - 2026-09-29 08:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:14:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:14:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:15:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 08:16:35 --> CSRF token verified.
+DEBUG - 2026-09-29 08:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 08:17:07 --> CSRF token verified.
+DEBUG - 2026-09-29 08:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:17:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+CRITICAL - 2026-09-29 08:17:08 --> ErrorException: Undefined property: App\Controllers\Advokat\DashboardController::$db
+[Method: GET, Route: advokat/dashboard]
+in APPPATH\Controllers\Advokat\DashboardController.php on line 65.
+ 1 APPPATH\Controllers\Advokat\DashboardController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Advokat\\DashboardController::$db', 'C:\\xampp\\htdocs\\probono-4\\app\\Controllers\\Advokat\\DashboardController.php', 65)
+ 2 APPPATH\Controllers\Advokat\DashboardController.php(32): App\Controllers\Advokat\DashboardController->getMonthlyChart(4, 2026)
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Advokat\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Advokat\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\probono-4\\public\\index.php')
+DEBUG - 2026-09-29 08:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 08:20:41 --> CSRF token verified.
+DEBUG - 2026-09-29 08:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 08:25:26 --> CSRF token verified.
+DEBUG - 2026-09-29 08:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 08:42:41 --> CSRF token verified.
+DEBUG - 2026-09-29 08:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:44:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+INFO - 2026-09-29 08:44:59 --> CSRF token verified.
+DEBUG - 2026-09-29 08:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
+DEBUG - 2026-09-29 08:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\DatabaseHandler' driver.
