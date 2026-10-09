@@ -237,7 +237,6 @@ Akun Demo
 
 Setelah seeding, tersedia akun demo:
 
-==========================  ==========================  =================
 Role                        Email                       Password
 ==========================  ==========================  =================
 Super Admin                 superadmin@peradi.or.id     Admin@2026
