@@ -4,16 +4,6 @@ PERADI Pro Bono
 
 Sistem Pendataan dan Verifikasi Bantuan Hukum Pro Bono PERADI.
 
-.. image:: https://img.shields.io/badge/PHP-8.1%2B-blue
-   :alt: PHP Version
-.. image:: https://img.shields.io/badge/CodeIgniter-4.7-red
-   :alt: CodeIgniter Version
-.. image:: https://img.shields.io/badge/MySQL-8.0-orange
-   :alt: MySQL Version
-.. image:: https://img.shields.io/badge/License-Proprietary-lightgrey
-   :alt: License
-
-
 Fitur Utama
 ===========
 
