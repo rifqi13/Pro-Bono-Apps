@@ -237,13 +237,23 @@ Akun Demo
 
 Setelah seeding, tersedia akun demo:
 
-Role                        Email                       Password
-==========================  ==========================  =================
-Super Admin                 superadmin@peradi.or.id     Admin@2026
-Admin                       admin@peradi.or.id          Admin@2026
-PBH Cabang                  cabang.jakarta@peradi.or.id Cabang@2026
-Advokat                     advokat@peradi.or.id        Advokat@2026
-==========================  ==========================  =================
+Super Admin
+superadmin@peradi.or.id
+Admin@2026
+
+Admin
+admin@peradi.or.id
+Admin@2026
+
+
+PBH Cabang
+cabang.jakarta@peradi.or.id
+Cabang@2026
+
+Advokat
+advokat@peradi.or.id
+Advokat@2026
+
 
 .. warning::
    Ganti semua password default sebelum deploy ke production!
