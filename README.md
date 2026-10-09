@@ -1,6 +1,5 @@
-==================
-PERADI Pro Bono
-==================
+Pencatatan Pro Bono PERADI
+==========================
 
 Sistem Pendataan dan Verifikasi Bantuan Hukum Pro Bono PERADI.
 
@@ -476,21 +475,6 @@ Copyright © 2026 DPN PERADI. All Rights Reserved.
 
 Sistem ini bersifat **proprietary** — hanya untuk internal PERADI.
 Dilarang mendistribusikan tanpa izin tertulis dari DPN PERADI.
-
-
-Kontak & Dukungan
-=================
-
-**DPN PERADI**
-
-- Alamat: PERADI TOWER, Jl. Jend. Achmad Yani No.116, Jakarta Timur 13120
-- Email: pbh@peradi.or.id
-- Website: https://peradi.or.id
-
-**Technical Support**
-
-- Email: it@peradi.or.id
-- Dokumentasi: ``/docs`` folder
 
 
 Catatan Rilis
